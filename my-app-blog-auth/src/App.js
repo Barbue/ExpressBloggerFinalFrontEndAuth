@@ -5,6 +5,8 @@ import axios from 'axios';
 import HomePage from './Pages/HomePage';
 import BlogFormPage from './Pages/BlogFormPage';
 import Layout from './Layouts/Layout';
+import LoginPage from "./Pages/LoginPage";
+import RegistrationPage from "./Pages/RegistrationPage";
 
 
 
@@ -48,6 +50,14 @@ function App() {
           />
 
         },
+        {
+					path: "login",
+					element: <LoginPage urlEndPoint={urlEndPoint} />
+				},
+				{
+					path: "registration",
+					element: <RegistrationPage urlEndPoint={urlEndPoint} />
+				},
         { 
           path: "blog-form",
           element: <BlogFormPage urlEndPoint={urlEndPoint} setShouldRefresh={setShouldRefresh}/>

@@ -1,10 +1,16 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import { useAuth } from "../Hooks/Auth";
+
+
 
 
 
 const BlogFormPage = (props) => {
+
+	const auth = useAuth()
+	
 
 	const { setShouldRefresh, urlEndPoint } = props;
     const [title, setTitle] = useState("")
@@ -48,14 +54,20 @@ const BlogFormPage = (props) => {
 
 
     return (
+		
 		<div>
-			<h1>Create Blog Form</h1>
+
+		 {!auth.userToken && navigate("/login")}
+		 
+			
+		{auth.userToken && <><h1>Create Blog Form</h1>
 			<label>Title: </label>
 			<input type="text" onChange={(e)=>{
 				setTitle(e.target.value)
 			}} />
+			
 			<br/>
-			<br/>
+			<br/> 
 			<label>Text: </label>
 			<textarea type="text" onChange={(e)=>{
 				setText(e.target.value)
@@ -78,6 +90,8 @@ const BlogFormPage = (props) => {
 			<input type="text" onChange={(e)=>{
 				setCategories(e.target.value)
 			}}/>
+		
+
 			
 			
             {/* <label>Id</label>
@@ -95,6 +109,11 @@ const BlogFormPage = (props) => {
 				handleCreateBlog()
 				navigate("/")
 			}}>Create Blog</button>
+		
+		</>
+		}
+
+		
 		</div>
 	)
 }
