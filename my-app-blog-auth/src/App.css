@@ -74,7 +74,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 }
 
 .link2 {
-  color: lightseagreen;
+  color: seagreen;
   font-weight: 1000;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -91,11 +91,16 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 
 .link4 {
 
-  color:seagreen;
+  color:lightseagreen;
  font-weight: 1000;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
+.link5 {
 
+ color:seagreen;
+ font-weight: 1000;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h2 {

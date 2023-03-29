@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Hooks/Auth";
 
@@ -11,10 +11,12 @@ const NavBar = () => {
     return (
         <div>
             <h3>{auth.userEmail && `Current User: ${auth.userEmail}`}</h3>
-            <Link className="link" to="/">Home </Link>
-            <Link className="link2" to="/blog-form">Blog Form</Link> 
-            <Link className="link3" to="/registration"> Registration Form</Link>
+            <Link className="link" to="/"> Home </Link>
+            <Link className="link5" to="/blogslist"> Blogslist </Link>
+            <Link className="link2" to="/blog-form"> Blog Form </Link> 
+            <Link className="link3" to="/registration"> Registration Form </Link>
 			<Link className="link4" to="/login"> Login Form</Link>
+            
             
             
 			<button onClick={()=>{

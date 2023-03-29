@@ -15,14 +15,14 @@ const RegistrationPage = (props) => {
     <div>
       <h1>Registration Page</h1>
       <h3>{registerMessage}</h3>
-      <label>email</label>
+      <label>Email: </label>
       <input
         type="text"
         onChange={(e) => {
           setEmail(e.target.value);
         }}
       />
-      <label>Password</label>
+      <label> Password:  </label>
       <input
         type="password"
         onChange={(e) => {

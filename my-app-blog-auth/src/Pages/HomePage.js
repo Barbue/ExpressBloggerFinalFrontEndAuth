@@ -1,26 +1,17 @@
-import { useState, useEffect } from "react";
-import BlogCard from "../Components/BlogCard";
+import { useEffect, useState } from "react";
 import { useAuth } from "../Hooks/Auth";
-import { useNavigate } from "react-router-dom";
 
 const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT
 
-//home page component 
-const HomePage = (props) => {
-    const navigate = useNavigate() 
-    const [message, setMessage] = useState("")
-    const auth = useAuth()
-    console.log(auth)
+const HomePage = () => {
+	const [message, setMessage] = useState("")
+	// const {userToken} = useAuth()
+	const auth = useAuth()
+	console.log(auth);
 
-    const {
-        blogList, 
-        setBlogList, 
-        urlEndPoint,
-        setShouldRefresh, 
-    } = props
-
-    useEffect(()=>{
-        // if(auth.userToken){}
+	// console.log(userToken)
+	
+	useEffect(()=>{
 		const fetchMessage = async () => {
 			const headers = {
 				"Content-Type": "application/json",
@@ -50,21 +41,12 @@ const HomePage = (props) => {
 
 	
 
-    return (
-        <div>
-            {!auth.userToken && navigate("/login")}
-            
-            {auth.userToken && <h1>Full Stack Blog App</h1> && blogList.map((item, index) => {
-                return (<BlogCard 
-                    blog={item} 
-                    setBlogList={setBlogList} 
-                    urlEndPoint={urlEndPoint}
-                    setShouldRefresh={setShouldRefresh}
-                    key={index} /> 
-                );
-            })}
-        </div>
-    )
+	return (
+		<div>
+			<h1>Home Page</h1>
+			<p>Message: {message}</p>
+		</div>
+	)
 }
 
 export default HomePage

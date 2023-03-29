@@ -7,6 +7,7 @@ import BlogFormPage from './Pages/BlogFormPage';
 import Layout from './Layouts/Layout';
 import LoginPage from "./Pages/LoginPage";
 import RegistrationPage from "./Pages/RegistrationPage";
+import BlogsList from "./Pages/BlogsList";
 
 
 
@@ -43,29 +44,32 @@ function App() {
       children: [
         {
           index: true,
-          element: <HomePage 
-          blogList={blogList} 
-            urlEndPoint={urlEndPoint} 
-            setShouldRefresh={setShouldRefresh}
-          />
+          element: <HomePage />,
 
         },
         {
 					path: "login",
-					element: <LoginPage urlEndPoint={urlEndPoint} />
+					element: <LoginPage  />
 				},
 				{
 					path: "registration",
-					element: <RegistrationPage urlEndPoint={urlEndPoint} />
+					element: <RegistrationPage  />
 				},
+        {
+          path: "blogslist",
+          element: <BlogsList blogList={blogList} 
+          urlEndPoint={urlEndPoint} 
+          setShouldRefresh={setShouldRefresh} />
+        },
         { 
           path: "blog-form",
           element: <BlogFormPage urlEndPoint={urlEndPoint} setShouldRefresh={setShouldRefresh}/>
-        }
-      ]
+        },
+        
+      ],
 
-    }
-  ])
+    },
+  ]);
 
 
   return (
